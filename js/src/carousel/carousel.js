@@ -16,11 +16,11 @@ import {
   reflow,
   triggerTransitionEnd,
   typeCheckConfig
-} from './util/index'
-import Data from './dom/data'
-import EventHandler from './dom/eventHandler'
-import Manipulator from './dom/manipulator'
-import SelectorEngine from './dom/selectorEngine'
+} from '../util/index'
+import Data from '../dom/data'
+import EventHandler from '../dom/eventHandler'
+import Manipulator from '../dom/manipulator'
+import SelectorEngine from '../dom/selectorEngine'
 
 /**
  * ------------------------------------------------------------------------
@@ -629,7 +629,7 @@ EventHandler.on(window, Event.LOAD_DATA_API, () => {
  * ------------------------------------------------------------------------
  * add .carousel to jQuery only if jQuery is present
  */
-
+/* istanbul ignore if */
 if (typeof $ !== 'undefined') {
   const JQUERY_NO_CONFLICT = $.fn[NAME]
   $.fn[NAME] = Carousel._jQueryInterface
